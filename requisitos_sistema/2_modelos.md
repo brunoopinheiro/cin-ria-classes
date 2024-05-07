@@ -105,7 +105,7 @@ Fornece um mecanismo para especificar variantes do caso de uso base.
 - Cada possível atribuição de valores aos atributos é um "estado";
 - Uma situação conhecida.
 
-Exemplos:
+**Exemplos:**
 - Sala
     - Disponível
     - Em uso
@@ -162,3 +162,90 @@ Exemplos:
 ### Ações
 - nas Transições
 - nos Estados
+
+## Diagrama de Blocos
+- O diagrama de blocos representa os elementos estruturais do sistema denominados blocos, sua composição e classificação.
+- Um Bloco é o elemento estrutural básico usado para modelar parte da estrutura do sistema.
+- O diagrama é usado para descrever
+    - Os blocos presentes no sistema
+    - Como os blocos se relacionam
+    - Características estruturais do bloco
+    - Características funcionais do bloco incluem operações e recepções.
+
+### Blocos
+- Modelam qualquer tipo de entidade dentro do sistema de interesse ou no ambiente externo ao sistema.
+    - **Exemplo**: Desktop Workstation representa um conjunto de propriedades como monitor, teclado, mouse, CPU, disco rígido, fabricante, custo, etc.
+- _Optional compartments_
+    - _Structural Features (or properties)_
+        - _Parts_
+        - _References_
+        - _Values_
+        - _Constraints_
+        - _Ports_
+            - _Standard - Full ports (in SysML v1.3)_
+            - _Flow - Proxy ports (in SysML v.1.3)_
+    - _Behavioural Features_
+        - _Operations_
+        - _Receptions_
+
+| <<`block`>> Flight Computer |
+|:---:|
+| _constraints_ sm: Sufficient Memory |
+| _values_ memoryCapacity: Mb dataPerOrbit: Mb |
+
+### Propriedades das Partes
+> Representam uma estrutura que é **interna** a um bloco, ou seja, um bloco `é composto` de suas propriedades "part" (noção de propriedade).
+
+**Exemplo**: Podemos instalar uma determinada antena em apenas um satélite de cada vez, e não em dois ou mais simultaneamente. Porém, essa antena pode ser removida de um satélite e reinstalada em outro em algum momento.
+
+**Sintaxe**: `<part name>: <type> [<multiplicity>]`
+- `part name`: de acordo com o analista
+- `type`: é o nome do bloco criado anteriormente
+- `multiplicity`: é uma restrição no número de instâncias que a propriedade part pode representar dentro da composição, expressa como um único inteiro ou como um intervalo de inteiros. 0..* ou * (zero ou mais). Default é 1.
+
+### Propriedades das Referências
+> Representam uma estrutura **externa** a um bloco.
+
+Um bloco com uma propriedade de referência `precisa dessa estrutura externa para algum propósito`, seja fornecer um serviço ou para trocar matéria, energia ou dados. Isso implica que algum tipo de conexão deve existir entre eles.
+
+**Sintaxe**: `<reference name>:<type>[<multiplicity>]` 0..* default 1
+
+### Propriedades dos Valores
+> Podem representar uma quantidade (de algum tipo), um Booleano ou uma String. Na maioria das vezes é uma propriedade na qual você pode atribuir um valor.
+
+**Sintaxe**: `<value name>:<type>[<multiplicity>]=<default value>` 0..* dafault 1
+
+### Porta
+> Representa um **ponto de interação** na fronteira de uma estrutura por meio da qual `entidades externas podem interagir` com essa estrutura. Seja para fornecer ou solicitar um serviço ou para trocar matéria, energia ou dados.
+
+**Tipos**: standard port ou flow port.
+
+- ***Standard Ports***
+    - Modela os serviços (comportamentos) que um bloco fornece ou exige.
+- ***Flow Ports***
+    - Modela os tipos de matéria, energia ou dados que podem ser recebidos ou transmitidos.
+    - **Sintaxe**: `<direction><name>:<type>`
+
+### Interface
+> Define um conjunto de **operations** (fornece serviço) e **receptions** (solicita serviço).
+
+**Sintaxe**: `<operation name>(<parameter list>:<return type>)[<multiplicity>]`
+
+### Behavioral Features - Operations
+> Representa o comportamento assíncrono que um **bloco executa quando um cliente o chama**. Declarado formalmente, uma operação é invocada por um _call event_.
+
+**Sintaxe**: `<operation name>(<parameter list>):<return type>[<multiplicity>]`
+
+### Behavioral Features - Receptions
+> Representa um comportamento que um **bloco executa quando um cliente envia um sinal que o aciona**. Declarado formalmente, uma recepção é invocada por um _signal event_.
+
+**Sintaxe**: `<<signal>><reception name>(<parameter list>)`
+
+## Relacionamento Entre Blocos
+**Reference**: Significa que uma conexão pode existir entre instâncias desses blocos em um sistema.
+
+**Associação/Composição (Composite)**: Representa decomposição estrutural. Uma instância do bloco na extremidade composta é constituida por um certo número de instâncias do bloco na extremidade.
+
+**Generalização**: Relacionada ao conceito de herança e especializações. Operações e variáveis se repetem.
+
+**Dependência**: um elemento do modelo, o cliente, depende de outro elemento do modelo, o fornecedor.
