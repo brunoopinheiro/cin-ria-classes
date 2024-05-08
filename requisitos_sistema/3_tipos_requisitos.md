@@ -205,3 +205,82 @@ Checklist de avaliação:
     - Chegar a um acordo em relação a opções mais adequadas aos interesses dos _stakeholders_.
 - Definir as prioridades dos requisitos para novas iterações de identificação e análise para o desenvolvimento.
 - Chegar a acordo em relação a compromissos entre requisitos que entram em conflito.
+
+## Diagrama de Requisitos
+O diagrama de requisitos representa graficamente:
+- Hierarquia entre os requisitos.
+- Relacionamentos entre os requisitos e outros elementos do modelo.
+
+- Existem <font color="red">três tipos de notação</font> usados para descrever relacionamentos entre requsitos:
+    - Direct, Compartment, e Callout
+- Existem 7 tipos de relacionamentos entre requisitos:
+    - _Containment_
+    - _Satisfy_
+    - _Verify_
+    - _Derive_
+    - _Refine_
+    - _Trace_
+    - _Copy_
+
+### Representação de Relacionamentos
+- **Direct**
+    - Usado quando o requieito e o elemento do modelo relacionado `aparecem no mesmo diagrama`.
+    - Estabelece a dependência do elemento do modelo com a exigência no modelo.
+    
+- **Compartment**
+    - Usado quando o requisito e o elemento do outro modelo `não aparecem no mesmo diagrama`.
+    - Utilizado para elementos de outros modelos, tais como blocos ou requisitos que suportam compartimentos.
+
+- **Callout**
+    - Usado quando o requisito e o elemento do outro modelo não aparecem no mesmo diagrama.
+    - Utiliza a caixa "Anotação" ao in´ves de um elemento do modelo.
+    - Pode ser usado quando o elemento do outro modelo ou ferramenta não suporta compartimentos.
+
+### Tipos de Relacionamentos entre requisitos
+- **Containment:**
+    - Representa hierarquia entre os requisitos.
+    - Também pode ser usado para representar quais requisitos estão contidos em um Pacote.
+
+- **Satisfy**
+    - Representa quando um elemento de outro modelo satisfaz um requisito.
+    - A seta aponta para o requisito.
+
+- **Verify**
+    - Representa quando um caso de teste é usado para verificar um requisito.
+    - A seta aponta para o requisito que é verificado.
+
+- **Derive**
+    - usado quando um requisito é derivado de outro requisito baseado na fase de análise.
+    - A seta aponta para o requisito de origem.
+
+- **Refine**
+    - Usado para representar um `elemento de outro modelo` que esclarece um requisito.
+    - A seta aponta para o requisito.
+
+- **Trace**
+    - Usado para relacionar requisitos a `elementos de outros modelos` que representa uma origem do requisito.
+    - A seta aponta para o elemento do outro modelo.
+
+- **Copy**
+    - Relaciona uma cópia de um requisito com o original.
+    - A ponta da seta indica o requisito origem.
+    - Normalmente utilizado quando o requisito de origem está contido em um padrão.
+    
+### Demonstrando Justificativas
+- Usado para explicar ou justificar um requisito ou um relacionamento entre requisitos.
+
+## Especificação de Requisitos
+- É importante registrar as informações coletadas e identificadas na etapa de levantamento de requisitos de forma adequada.
+- Documentos de Requisitos = Descrição das características que o sistema deverá apresentar.
+- Para documentar requisitos podem ser utilizadas a linguagem natural, modelos formais e diagramas.
+
+### Documento de Requisitos
+É um documento utilizado para comunicar os requisitos aos clientes, engenheiros e gerentes.
+
+| | |
+|:--:|---|
+| **Clientes do Sistema** | Especificam e leem os requisitos para verificar se estes satisfazem suas necessidades. Os clientes especificam as alterações nos requisitos. |
+| **Gerentes** | Usam o documento de requisitos para planejar uma proposta para o sistema e planejar o processo de desenvolvimento do sistema. |
+| **Engenheiros do Sistema** | Usam os requisitos para entender o sistema que será desenvolvido. |
+| **Engenheiros de Teste do Sistema** | Usam os requisitos para desenvolver testes de validação do sistema. |
+| **Engenheiros de Manutenção do Sistema** | Usam os requisitos para entender o sistema e os relacionamentos entre suas partes. |
