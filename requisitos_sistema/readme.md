@@ -26,3 +26,8 @@ Ao final da disciplina, o aluno deverá ser capaz de elicitar, analisar e especi
 - Visual Paradigm Community
 - Draw.io, Canva, Miro
 - Editores de texto, planilha e apresentações
+
+## Aulas
+- [Aula 1](./1_introducao.md)
+- [Aula 2](./2_modelos.md)
+- [Aula 3](./3_tipos_requisitos.md)
