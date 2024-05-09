@@ -31,3 +31,4 @@ Ao final da disciplina, o aluno deverá ser capaz de elicitar, analisar e especi
 - [Aula 1](./1_introducao.md)
 - [Aula 2](./2_modelos.md)
 - [Aula 3](./3_tipos_requisitos.md)
+- [Aula 4](./4_validacao_requisitos.md)
