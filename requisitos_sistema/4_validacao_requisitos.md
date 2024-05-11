@@ -232,6 +232,7 @@ Rastreamento de informação é aquela informação que ajuda a analisar o impac
     - Listas de rastreamento são simples listas de relacionamentos que podem ser implementadas como texto ou tabelas simples.
 
 | Requisito | Depende de |
+|:---:|:---:|
 | **R1** | R3, R4 |
 | **R2** | R5, R6 |
 | **R3** | R4, R5 |
