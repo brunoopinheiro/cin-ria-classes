@@ -18,3 +18,5 @@ Os conteúdos de cada disciplina estão organizados à partir das _branches_ ded
 | Processamento de Imagens Aplicado à Robótica | |
 | Visão Computacional Aplicada à Robótica | |
 | Redes de Computadores Aplicada à Robótica | |
+| Workshop: Pensamento Computacional | [Link](https://github.com/brunoopinheiro/cin-ria-classes/blob/treinamento/pensamento_comp/pensamento_computacional/pensamento_computacional.md) |
+| Workshop: Python Básico | [Link]() |
