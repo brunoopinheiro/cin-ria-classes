@@ -278,8 +278,59 @@ def cli_consecutiveprint():
 # 9) Na física, um problema clássico de cinemática é encontrar a posição de um corpo ao longo do processo de queda acelerada por meio da gravidade.
 # Faça um programa que calcula a altura H que um corpo cai sob ação da gravidade (g=9.8m/s^2) durante 7.5 segundos,
 # sabendo que ele tem uma velocidade inicial v0 = 0.75m/s^2, vertical para baixo.
-def calc_height(t: float, v0: float) -> float:
-    ...
+def calc_height(
+    t: float,
+    v0: float = 0.75, #m/s^2
+    ) -> float:
+    GRAVITY = 9.8 #m/s^2
+    # h = v0 x t + 0.5 x g x t²
+    height = (v0 * t) + 0.5 * GRAVITY * (t ** 2)
+    return height
+
+
+def cli_calheight():
+    print('9) Na física, um problema clássico de cinemática é encontrar a posição de um corpo ao longo do processo de queda acelerada por meio da gravidade.')
+
+    result = calc_height(t = 7.5)
+    print(f'H: {result}')
+
+
+# 10) Joãozinho investiu R$1000,00 na sua conta do Banco Iradoso por um ano.
+# Sabendo que seu investimento rende 0.02% por dia útil, qual o montante que Joãozinho terá após 7 semanas de investimento?
+def calc_rend(
+    investimento: float,
+    semanas: int,
+    rend: float = 0.02,
+    ) -> float:
+    DIAS_SEMANA = 7
+    dias_totais = DIAS_SEMANA * semanas
+    
+    montante = investimento
+    for i in range(1, dias_totais + 1):
+        montante += montante * rend
+
+    return montante
+
+
+def cli_calcrend():
+    print('10) Joãozinho investiu R$1000,00 na sua conta do Banco Iradoso por um ano.')
+
+
+    investimento = 1_000
+    semanas = 7
+    rend = 0.02
+    result = calc_rend(
+        investimento=investimento,
+        semanas=semanas,
+        rend=rend,
+    )
+
+    print(f'''
+    Investimento Inicial: R$ {investimento:.2f},
+    Semanas de Investimento: {semanas},
+    Rendimento base: {rend * 100} %
+    Montante Final: R$ {result:.2f}
+    ''')
 
 
 
@@ -325,6 +376,16 @@ def main_cli():
             'key': 8,
             'description': 'Imprime lista de numeros',
             'function': cli_consecutiveprint,
+        },
+        {
+            'key': 9,
+            'description': 'Calcula H de queda livre',
+            'function': cli_calheight,
+        },
+        {
+            'key': 10,
+            'description': 'Calcula Investimento',
+            'function': cli_calcrend,
         },
     ]
 
