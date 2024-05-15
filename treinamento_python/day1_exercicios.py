@@ -149,9 +149,141 @@ def cli_calctax():
 # Para cada diária, o cliente recebe uma cota de quilometragem de 100 Km. Cada quilômetro a mais custará uma taxa extra de R$ 12.
 # Escreva um programa que receba como entrada a quantidade de dias e a quilometragem total rodada por um cliente dessa locadora e exiba o valor total a ser pago com duas casas decimais.
 def calc_carprice(days: int, total_km: int) -> float:
+    PRICE_DAY = 90
+    PRICE_EXKM = 12
+    KM_DAY = 100
+
+    quota_km = days * KM_DAY
+    extra_km = total_km - quota_km
+
+    base_price = days * PRICE_DAY
+    extra_fee = extra_km * PRICE_EXKM
+
+    return round((base_price + extra_fee), 2)
+
+
+def cli_carprice():
+    print('4) A Locadora de Veículos Eudora lançou uma grande promoção esse mês: pagando apenas R$ 90 por diária, o cliente pode alugar um carro de passeio.')
+
+    days = input('Por quantos dias o carro ficou alugado? ')
+    total_km = input('Qual a kilometragem rodada? ')
+
+    try:
+        days = int(days)
+        total_km = int(total_km)
+        result = calc_carprice(days=days, total_km=total_km)
+        print(f'Valor a pagar: R${result:.2f}')
+    except ValueError:
+        print('Digite um valor numérico inteiro.')
+
+
+# 5) Escreva um programa que exiba na saída padrão os 100 primeiros números naturais (inteiros positivos incluindo o zero).
+def naturals_range(n_range: int = 100) -> None:
+    naturals = [i for i in range(n_range)]
+    return naturals
+
+
+def cli_natrange():
+    print('5) Escreva um programa que exiba na saída padrão os 100 primeiros números naturais (inteiros positivos incluindo o zero).')
+
+    result = naturals_range()
+    print(result)
+
+
+# 6) Escreva um programa que exiba na saída padrão os 100 primeiros números primos.
+def is_prime(i: int) -> bool:
+    for j in range(2, i):
+        if (i % j) == 0:
+            return False
+    return True
+
+
+from typing import List
+def n_primes(n: int = 100) -> List[int]:
+    if n < 2:
+        return []
+    primes = []
+    i = 2
+    while len(primes) < n:
+        if is_prime(i) is True:
+            primes.append(i)
+        i += 1
+
+    return primes
+
+
+def cli_primes():
+    print('6) Escreva um programa que exiba na saída padrão os 100 primeiros números primos.')
+
+    result = n_primes()
+    print(result)
+
+
+# 7) Impares - Quadrados Consecutivos
+from typing import Tuple
+def get_consecutivesquares(odd_number: int) -> Tuple[int, int]:
+    if odd_number % 2 == 0:
+        return (0, 0)
+
+    minor_half = odd_number // 2
+    greater_half = minor_half + 1
+
+    return (minor_half ** 2, greater_half ** 2)
+
+
+def cli_consecutivesquares():
+    print('7) Impares - Quadrados Consecutivos')
+
+    get_input = True
+    while get_input is True:
+        try:
+            odd_number = input('Digite um número impar: ')
+            odd_number = int(odd_number)
+            if odd_number % 2 == 0:
+                raise ValueError
+
+            minor_sqr, grt_sqr = get_consecutivesquares(odd_number)
+            print(f'{grt_sqr} - {minor_sqr} = {odd_number}')
+            get_input = False
+        except ValueError:
+            print('Digite um número válido.')
+
+
+# 8) Printa consecutivamente 1 - 40
+def print_consecutive(n) -> bool:
+    if n < 1 or n > 40:
+        return False
+
+    numbers = []
+    for i in range(1, n + 1):
+        numbers.append(str(i))
+        print(' '.join(numbers))
+    
+    return True
+
+
+def cli_consecutiveprint():
+    print('8) Printa consecutivamente 1 - 40')
+
+    result = False
+    while result is False:
+        try:
+            i_n = input('Digite um n entre 1 e 40: ')
+            i_n = int(i_n)
+            result = print_consecutive(i_n)
+        except ValueError:
+            print('Digite um número válido.')
+
+
+# 9) Na física, um problema clássico de cinemática é encontrar a posição de um corpo ao longo do processo de queda acelerada por meio da gravidade.
+# Faça um programa que calcula a altura H que um corpo cai sob ação da gravidade (g=9.8m/s^2) durante 7.5 segundos,
+# sabendo que ele tem uma velocidade inicial v0 = 0.75m/s^2, vertical para baixo.
+def calc_height(t: float, v0: float) -> float:
     ...
 
 
+
+# Main Running Function
 def main_cli():
     program_options = [
         {
@@ -169,6 +301,31 @@ def main_cli():
             'description': 'Calcula imposto sobre valor da mercadoria',
             'function': cli_calctax,
         },
+        {
+            'key': 4,
+            'description': 'Calcula preço de aluguel de carro',
+            'function': cli_carprice,
+        },
+        {
+            'key': 5,
+            'description': 'Exibe 100 primeiros números naturais',
+            'function': cli_natrange,
+        },
+        {
+            'key': 6,
+            'description': 'Exibe 100 primeiros números primos',
+            'function': cli_primes,
+        },
+        {
+            'key': 7,
+            'description': 'Imprime diferença de dois quadrados',
+            'function': cli_consecutivesquares,
+        },
+        {
+            'key': 8,
+            'description': 'Imprime lista de numeros',
+            'function': cli_consecutiveprint,
+        },
     ]
 
     print("=== Escolha um exercício ===")
@@ -181,6 +338,7 @@ def main_cli():
         try:
             option = int(option)
             cli_function = program_options[option - 1]['function']
+            print('-------')
             cli_function()
             break
         except (ValueError, IndexError):
