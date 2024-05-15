@@ -36,7 +36,7 @@ def cli_media():
             i_score = float(i_score)
             if i_score == -1:
                 get_scores = False
-                break
+                return
             input_scores.append(i_score)
         except ValueError:
             pass
@@ -192,6 +192,8 @@ def cli_natrange():
 
 # 6) Escreva um programa que exiba na saída padrão os 100 primeiros números primos.
 def is_prime(i: int) -> bool:
+    if i == 1:
+        return False
     for j in range(2, i):
         if (i % j) == 0:
             return False
@@ -401,7 +403,7 @@ def main_cli():
             cli_function = program_options[option - 1]['function']
             print('-------')
             cli_function()
-            break
+            return
         except (ValueError, IndexError):
             print("Digite uma opção válida.")
 
