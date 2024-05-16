@@ -48,15 +48,15 @@ def cli_growthvalues():
     while getting_inputs is True:
         try:
             pop_a = int(input('População A: '))
-            rate_a = float(input('Taxa de Crescimento (A): '))
+            rate_a = float(input('Taxa de Crescimento (A)(%): '))
             pop_b = int(input('População B: '))
             rate_b = float(input('Taxa de Crescimento (B): '))
 
             result = growth_rate(
                 pop_a=pop_a,
-                rate_a=rate_a,
+                rate_a=(rate_a / 100),
                 pop_b=pop_b,
-                rate_b=rate_b,
+                rate_b=(rate_b / 100),
             )
 
             print(f'Anos necessários: {result}')
@@ -114,13 +114,15 @@ def average(numbers_list: list) -> float:
 
 
 def average_students():
+    MAX_STUDENTS = 40
     try:
         classes = int(input('Nº de Turmas: '))
 
         students_list = []
-        for i in range(classes):
-            n_students = int(input(f'Nº de estudantes da turma {i + 1}: '))
-            students_list.append(n_students)
+        while len(students_list) < classes:
+            n_students = int(input(f'Nº de estudantes da turma {len(students_list) + 1}: '))
+            if n_students > 1 and n_students <= MAX_STUDENTS:
+                students_list.append(n_students)
 
         print(f'Média de alunos por turma é de {average(students_list)}')
     except ValueError:
@@ -178,7 +180,7 @@ def count_pools():
     }
 
     keep_inputing = True
-    print('Digite números entre 1 e 100.')
+    print('Digite números entre 0 e 100.')
     print('Digite um número negativo para sair.')
     while keep_inputing is True:
         try:
@@ -193,8 +195,8 @@ def count_pools():
                 pools['c']['count'] += 1
             elif new_number < pools['d']['max']:
                 pools['d']['count'] += 1
-            else:
-                keep_inputing = False
+            # else:
+            #     keep_inputing = False
         except ValueError:
             print('Digite apenas números.')
 
@@ -214,10 +216,12 @@ if __name__ == "__main__":
 
 
     # # Exercicio 1
+    # print('Exercício 1')
     # login()
 
 
     # # Exercicio 2
+    # print('Exercício 2')
     # years = growth_rate(
     #     pop_a=80_000,
     #     rate_a=0.03,
@@ -228,14 +232,17 @@ if __name__ == "__main__":
 
 
     # # Exercício 3
+    # print('Exercício 3')
     # cli_growthvalues()
 
 
     # # Exercicio 4
+    # print('Exercício 4')
     # cli_evenodds()
 
 
     # # Exercicio 5
+    # print('Exercício 5')
     # print(is_prime(1))
     # print(is_prime(2))
     # print(is_prime(3))
@@ -245,12 +252,15 @@ if __name__ == "__main__":
 
 
     # # Exercicio 6
+    # print('Exercício 6')
     # average_students()
 
 
     # # Exercício 7
+    # print('Exercício 7')
     # get_salary()
 
 
     # # Exercício 8
+    # print('Exercício 8')
     # count_pools()
