@@ -6,4 +6,4 @@ _ghpc@cin.ufpe.br_
 ## Conteúdo
 | Ordem | Desc |
 | :---: | :---: |
-| 1 | [Introdução](arquitetura_sistemas\01_introducao.md) |
+| 1 | [Introdução](01_introducao.md) |
