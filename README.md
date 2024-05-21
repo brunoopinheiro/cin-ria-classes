@@ -5,7 +5,7 @@ Os conteúdos de cada disciplina estão organizados à partir das _branches_ ded
 | Disciplina | Conteúdo |
 |:---|:---:|
 | Requisitos de Sistemas | [Link](https://github.com/brunoopinheiro/cin-ria-classes/tree/requisitos_sistema/requisitos_sistema) |
-| Arquitetura de Sistemas | [Link]() |
+| Arquitetura de Sistemas | [Link](https://github.com/brunoopinheiro/cin-ria-classes/tree/arquitetura_sistemas/arquitetura_sistemas) |
 | Projeto de Sistemas | |
 | Python Básico | |
 | Orientação a Objetos com Python | |
