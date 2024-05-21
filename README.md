@@ -5,7 +5,7 @@ Os conteúdos de cada disciplina estão organizados à partir das _branches_ ded
 | Disciplina | Conteúdo |
 |:---|:---:|
 | Requisitos de Sistemas | [Link](https://github.com/brunoopinheiro/cin-ria-classes/tree/requisitos_sistema/requisitos_sistema) |
-| Arquitetura de Sistemas | |
+| Arquitetura de Sistemas | [Link]() |
 | Projeto de Sistemas | |
 | Python Básico | |
 | Orientação a Objetos com Python | |
@@ -19,4 +19,4 @@ Os conteúdos de cada disciplina estão organizados à partir das _branches_ ded
 | Visão Computacional Aplicada à Robótica | |
 | Redes de Computadores Aplicada à Robótica | |
 | Workshop: Pensamento Computacional | [Link](https://github.com/brunoopinheiro/cin-ria-classes/blob/treinamento/pensamento_comp/pensamento_computacional/pensamento_computacional.md) |
-| Workshop: Python Básico | [Link]() |
+| Workshop: Python Básico | [Link](https://github.com/brunoopinheiro/cin-ria-classes/tree/treinamento/python_basico/treinamento_python) |
