@@ -565,6 +565,141 @@ def test_ex5():
 # todo movimento deve ocorrer em uma casa vazia;
 # depois de cada movimento,
 # determine se houve uma derrota ou um empate.
+class HashGame():
+    @property
+    def boardmap(self):
+        return {
+            1: (2, 0),
+            2: (2, 1),
+            3: (2, 2),
+            4: (1, 0),
+            5: (1, 1),
+            6: (1, 2),
+            7: (0, 0),
+            8: (0, 1),
+            9: (0, 2),
+        }
+
+    @property
+    def winning_combinations(self):
+        return [
+            [(0, 0), (1, 1), (2, 2)], [(0, 2), (1, 1), (2, 0)],  # diagonals
+            [(0, 0), (1, 0), (2, 0)], [(0, 1), (1, 1), (2, 1)],
+            [(0, 2), (1, 2), (2, 2)],  # columns
+            [(0, 0), (0, 1), (0, 2)], [(1, 0), (1, 1), (1, 2)],
+            [(2, 0), (2, 1), (2, 2)],  # rows
+        ]
+
+    @property
+    def sampleboard(self):
+        return [
+            [7, 8, 9],
+            [4, 5, 6],
+            [1, 2, 3],
+        ]
+
+    @property
+    def initialboard(self):
+        return [
+            [' ', ' ', ' '],
+            [' ', ' ', ' '],
+            [' ', ' ', ' '],
+        ]
+
+    def __init__(
+            self,
+            player1_mark: str,
+            player2_mark: str,
+    ):
+        self._p1m = player1_mark
+        self._p2m = player2_mark
+        self.movesp1 = []
+        self.movesp2 = []
+        self.board = self.initialboard
+        self.count = 1
+        self.player = 1
+
+    @staticmethod
+    def printboard(boardstate: list) -> None:
+        print(' {} | {} | {} '.format(*boardstate[0]))
+        print('---+---+---')
+        print(' {} | {} | {} '.format(*boardstate[1]))
+        print('---+---+---')
+        print(' {} | {} | {} '.format(*boardstate[2]))
+
+    def nextplayer(self):
+        self.count += 1
+        self.player = 2 if self.player == 1 else 1
+
+    def registerplay(self, move):
+        if self.player == 1:
+            self.movesp1.append(move)
+        if self.player == 2:
+            self.movesp2.append(move)
+
+    def setboard(self, newboard):
+        self.board = newboard
+        self.nextplayer()
+
+    def getplay(self):
+        playermark = self._p1m if self.player == 1 else self._p2m
+        newboard = self.board
+        try:
+            play = int(input('Digite a coordenada da sua jogada: '))
+            i, j = self.boardmap[play]
+            if self.board[i][j] != ' ':
+                raise AssertionError
+            newboard[i][j] = playermark
+            return (True, newboard, (i, j))
+        except (ValueError, AssertionError):
+            print('Jogada inválida.')
+            return (False, self.board, (-1, -1))
+
+    def assert_endgame(self):
+        if self.count == 10:
+            return (True, None)
+        p1_moveset = set(self.movesp1)
+        p2_moveset = set(self.movesp2)
+
+        for win_c in self.winning_combinations:
+            set_win_c = set(win_c)
+            if set_win_c.issubset(p1_moveset):
+                return (True, 1)
+            if set_win_c.issubset(p2_moveset):
+                return (True, 2)
+
+        return (False, None)
+
+    def play(self):
+        print('Jogo da Velha!')
+        print('As coordenadas do jogo são:\n')
+        self.printboard(self.sampleboard)
+        print('\n')
+
+        stop = False
+        while stop is False:
+            print('=======')
+            print(f'Rodada: {self.count}')
+            self.printboard(self.board)
+            stop, winner = self.assert_endgame()
+
+            if stop is False:
+                print(f'Sua vez, Jogador {self.player}')
+                valid, newboard, move = self.getplay()
+                if valid:
+                    self.registerplay(move)
+                    self.setboard(newboard)
+
+            if stop is True:
+                if winner is None:
+                    print('Deu velha! Tentem novamente!')
+                else:
+                    print(f'Parabéns, Jogador {winner}. Você venceu!')
+
+
+def test_ex6():
+    hashgame = HashGame('X', 'O')
+    hashgame.play()
 
 
 if __name__ == "__main__":
@@ -584,6 +719,10 @@ if __name__ == "__main__":
     # print('Exercício 4 - Gerenciador de Times')
     # test_ex4()
 
-    # Ex5
-    print('Exercício 5 - Data v2')
-    test_ex5()
+    # # Ex5
+    # print('Exercício 5 - Data v2')
+    # test_ex5()
+
+    # Ex6
+    print('Exercício 6 - Jogo da Velha')
+    test_ex6()
