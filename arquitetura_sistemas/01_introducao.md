@@ -4,7 +4,7 @@
 
 **Motivação: desenvolvimento, <font color='#214278'>manutenção</font> e <font color='#214278'>reuso</font>**
 
-- Classroom: <font color='#214278'>kuzxhui</font>
+- Classroom:
     - Plano de aulas
     - Slides
     - Códigos
