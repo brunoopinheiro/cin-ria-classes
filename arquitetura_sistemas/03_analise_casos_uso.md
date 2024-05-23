@@ -47,6 +47,8 @@ Exemplos:
 - Interface com dispositivos.
     - Foco: quais protocolos devem ser definidos (não: implementação)
 
+Regra geral: uma classe para cada parte `ator`/`caso de uso`.
+
 FOCO: Responsabilidades
 
 <h4>Classes de Entidade</h4>
@@ -82,13 +84,75 @@ Este caso de uso é responsável por autenticar um usuário do sistema.
 
 **Fluxos secundários**
 - No passo 2, se o login ou a senha forem inválidos, o sistema exibe uma mensagem e volta ao passo 1.
-<br/><br/>
-<div style="border: 1px dashed">
-    <h5>Classes: </h5>
-    <ul>
-        <li>Usuário</li>
-        <li>Conta</li>
-        <li>Sessão</li>
-    </ul>
 </div>
-</div>
+
+<h4>Classes de Controle</h4>
+
+> Coordenam o comportamento (lógica de controle) do caso de uso **Interface** entre fronteiras e entidades.
+
+Separação: uso da entidade x comportamento inerente à entidade.
+
+**Usualmente**: uma por caso de uso.
+- Várias: Comportamento complexo
+- Nenhuma: Manipulação simples da informação.
+
+### Passo 2: Identificar persistência
+Identificar quais caso de análise deverão ser persistentes
+- Para cada classe, criar uma classe de Cadastro
+- Estereótipo: _<\<entity collection>>_
+    - Entidades que representam a forma (_no sentido de coleção_) como estas classes serão mantidas (guardadas de forma permanente) no sistema.
+    - _É a classe que vai gerenciar a persistência da entidade._
+    - Ex.: <font color='#1583dc'>**<\<entity collection>> Cadastro Usuários**</font> é um grupo de <font color='#1583dc'>**<\<entity>> Usuários**</font>
+
+### Passo 3: Distribuir Comportamento
+Para cada fluxo de eventos
+- Alocar responsabilidades do caso de uso às classes de análise.
+- Modelar interações através de diagramas de interação.
+
+Estereótipos fornecem **guias**
+- Fronteira = envolve comunicação com atores.
+- Entidade = envolve informação encapsulada na abstração.
+- Controle = envolve comportamento específico do caso de uso.
+
+> _Cadastros são classes que vão controlar a persistência da entidade base._
+
+Desdobramento: **novas classes** ou **relacionamentos**.
+
+**Quantos diagramas?**
+- Quantos forem necessários para identificar responsabilidades.
+- Pelo menos o fluxo principal do caso de uso.
+
+**Quais diagramas?**
+- Sequência: fluxo no tempo, fluxo completo, fluxos complexos
+- Colaboração: visualizar relacionamentos e responsabilidade, mais fáceis de desenhar (sessão de _brainstorm_).
+
+### Passo 4: descrever responsabilidades
+> Mensagens nos diagramas de interação resultam em responsabilidades nas classes receptores.
+
+É importante refletir sobre os modelos criados
+- Classes com responsabilidades similares => combinar?
+- Classes com responsabilidades disjuntas => dividir?
+- Classes sem ou com apenas uma responsabilidade => reexaminar!
+- Classes que interagem com muitas outras => reexaminar!
+
+### Passo 5: Descrever atributos e relacionamentos
+**Atributos**
+- Informações das classes identificadas
+- Informação cujo valor é essencial
+- Informação de propriedade exclusiva do objeto.
+- Informação que pode ser lida ou escrita por operações
+- Informações com comportamento complexo => **nova classe**
+- Informação compartilhada => **nova classe**
+
+**Relacionamentos**
+- Diagrama de interação: mensagens entre objetos.
+- Relacionamento **reflexivo**: comunicação entre objetos da classe.
+- **Navegabilidade**: coerente com a direção da mensagem.
+- Incluir também o **papel** (_role_) e a **multiplicidade**.
+
+### Passo 6: Revisar os resultados
+As classes de análise **satisfazem** os requisitos funcionais?
+
+O modelo está consistente entre si e com os requisitos?
+
+**Criar** novas, **modificar** ou **unificar** as classes de análise.

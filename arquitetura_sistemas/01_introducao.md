@@ -15,6 +15,7 @@
     - _Prova escrita Individual_
 - Bibliografia
     - Eduardo Bezerra. _Princípios de Análise e Projeto de Sistemas com UML._ GEN LTC; 3ª edição (2014)
+        - [Alguns Exercícios Resolvidos](https://eic.cefet-rj.br/papsuml3ed/papsuml3ed-exercicios-resolvidos.pdf)
 
 ## Por Quê Orientação a Objetos?
 - Tipo: um conjunto de **valores**

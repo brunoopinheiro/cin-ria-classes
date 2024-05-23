@@ -7,3 +7,5 @@ _ghpc@cin.ufpe.br_
 | Ordem | Desc |
 | :---: | :---: |
 | 1 | [Introdução](01_introducao.md) |
+| 2 | [UML](02_uml.md) |
+| 3 | [Análise de Casos de Uso](03_analise_casos_uso.md) |
