@@ -108,6 +108,7 @@ Identificar quais caso de análise deverão ser persistentes
 Para cada fluxo de eventos
 - Alocar responsabilidades do caso de uso às classes de análise.
 - Modelar interações através de diagramas de interação.
+    - Pode ser tanto o diagrama de sequencia, quanto o diagrama de colaboração
 
 Estereótipos fornecem **guias**
 - Fronteira = envolve comunicação com atores.
