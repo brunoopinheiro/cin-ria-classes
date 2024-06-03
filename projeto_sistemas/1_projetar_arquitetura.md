@@ -99,6 +99,8 @@ Responsabilidades da Fachada:
 - Centraliza as instâncias das coleções de negócio e controladores
 - Gerencia as transações do sistema.
 
+> A fachada pode se comunicar diretamente com o `Cadastro` ou com um `Controlador` intermediário.
+
 ### Passo 1.4: Realizar o Mapeamento
 Importante para manter a rastreabilidade entre os níveis de abstração.
 
