@@ -87,3 +87,96 @@ Possíveis fontes (componentes reutilizáveis):
 - Acesso ao BD;
 - Bibliotecas de utilitários;
 - Produtos específicos da aplicação.
+
+### Passo 1.3: Especificar a Interface dos Subsistemas
+
+![](diagrams/projeto_sistemas-Page-2.drawio.png)
+Além da interface, destaca-se a classe **Fachada** de cada subsistema.
+
+Responsabilidades da Fachada:
+- Segue o padrão de projetos _Facade_;
+- Representa os serviços oferecidos pelo (sub)sistema;
+- Centraliza as instâncias das coleções de negócio e controladores
+- Gerencia as transações do sistema.
+
+### Passo 1.4: Realizar o Mapeamento
+Importante para manter a rastreabilidade entre os níveis de abstração.
+
+| Classe de Análise | Elementos de Projeto |
+| :--- | :--- |
+|   | Fachada, TelaMenu, Data, Hora |
+| Conta | ContaInternet, ContaCorrente |
+| CadastroContas | CadastroContasInternet, IRepositorioContasInternet, RepositorioContasInternetBDR, CadastroContasCorrente, IRepositorioContasCorrente, RepositorioContasCorrenteBDR |
+| CadastroPagamentosCartao | CadastroTransacoes, IRepositorioTransacoes, RepositorioTransacoesBDR |
+| ComunicacaoOperadoraCartao | SubsistemaComunicacaoOperadoraCartao, ISubsistemaComunicacaoOperadoraCartao, FachadaComunicacaoOperadoraCartao |
+
+### Passo 2: Identificar Oportunidades de Reuso
+Oportunidades **internas** aos sistema
+- Similaridades entre pacotes e subsistemas
+
+Oportunidades **externas** ao sistema
+- Componentes disponíveis no mercado;
+- Componentes de aplicação já desenvolvidas;
+- Componentes que podem ser reutilizados em outros projetos.
+
+### Passo 3: Definir a Estrutura da Aplicação
+1. Definir o **padrão arquitetural** do sistema (ex.: em camadas);
+2. Determinar o meio de armazenamento utilizado;
+3. Agrupar as classes em pacotes e especificar a fachada do sistema.
+
+### Passo 3.1: Definir o Padrão Arquitetural
+Arquitetura em camadas
+- Interface com o usuário (GUI);
+- Comunicação;
+- Regras de Negócio;
+- Acesso a dados.
+
+![](diagrams/projeto_sistemas-Page-3.drawio.png)
+
+> Se as interfaces forem preservadas, mudanças em uma camada não afetam as outras.
+
+Arquitetura em camadas: uma **mesma versão** de uma camada trabalhando com diferentes versões de outra camada.
+
+- Várias GUIs;
+- Vários mecanismos de persistência;
+- Várias plataformas de distribuição.
+
+- GUI
+- Negócio
+    - Classes básicas (entidades)
+    - Coleção de negócio (cadastros)
+    - Fachada do sistema
+- Dados
+    - Coleção de dados (repositórios)
+
+### Passo 3.2: Determinar o Meio de Armazenamento
+Coleção de negócio (cadastros)
+- Representam conjuntos de objetos de classes básicas
+- Encapsulam as verificações e validações inerentes ao negócio
+
+Coleção de dados (repositórios)
+- Manipulam a estrutura física de armazenamento dos dados
+- Isolam o resto do sistema do meio físico utilizado
+
+> Evita-se implementar regras de negócio na camada de repositório para facilitar a mudança de tecnologia de persistência (ex.: mudança de banco de dados).
+
+#### Independência do meio de armazenamento
+Fazer uso de interfaces negócio-dados
+![](diagrams/projeto_sistemas-Page-4.drawio.png)
+
+### Passo 3.3: Agrupar as Classes em Pacotes
+Pacotes: permite **organizar** melhor os elementos de projeto (especialmente importante com o aumento da complexidade do sistema).
+
+Critérios a serem considerados: **acoplamento** e **coesão**.
+
+## Projetar Arquitetura
+1. Mapear classes de análise em elementos de projeto
+    - Identificar classes de projeto
+    - Identificar subsistemas
+    - Especificar a interface dos subsistemas
+    - Realizar o mapeamento
+2. Identificar oportunidades de reuso
+3. Definir a estrutura da aplicação
+    - Definir o padrão arquitetural do sistema (ex.: em camadas)
+    - Determinar o meio de armazenamento utilizado
+    - Agrupar as classes em pacotes e especificar a fachada do sistema
