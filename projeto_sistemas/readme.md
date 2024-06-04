@@ -7,13 +7,14 @@
 | Ordem | Assunto |
 | :---: | --- |
 | 1 | [Projetar Arquitetura](1_projetar_arquitetura.md) |
+| 2 | [Padrões de Projeto](2_padroes_projeto.md) |
 
 ## Cronograma
 
 | Dia | Horário | Conteúdo |
 | :---: | :---: | --- |
-| 2024-06-03 (Segunda) | 08:00 - 12:00 | <ul><li>Apresentação da Disciplina</li><li>Projetar Arquitetura</li><li>Prática 1: Projetar Arquitetura</li></ul> |
-| 2024-06-04 (Terça) | 08:00 - 12:00 | <ul><li>Padrões de Projeto</li><li>Prática 2: Padrões de Projeto</li></ul> |
+| 2024-06-03 (Segunda) | 08:00 - 12:00 | <ul><li>Apresentação da Disciplina</li><li>Projetar Arquitetura</li></ul> |
+| 2024-06-04 (Terça) | 08:00 - 12:00 | <ul><li>Prática 1: Projetar Arquitetura</li><li>Padrões de Projeto</li><li>Prática 2: Padrões de Projeto</li></ul> |
 | 2024-06-05 (Quarta) | 08:00 - 12:00 | <ul><li>Padrões Arquiteturais</li><li>Prática 3: Padrões Arquiteturais</li><li>Prática 4: Projeto de Sistemas Robóticos</li></ul> |
 | 2024-06-06 (Quinta) | 08:00 - 11:00 | Discussão sobre a Prática 4 |
 | 2024-06-10 (Segunda) | - | Avaliação (Prova Escrita) - Individual |

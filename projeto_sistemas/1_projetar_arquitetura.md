@@ -182,3 +182,22 @@ Critérios a serem considerados: **acoplamento** e **coesão**.
     - Definir o padrão arquitetural do sistema (ex.: em camadas)
     - Determinar o meio de armazenamento utilizado
     - Agrupar as classes em pacotes e especificar a fachada do sistema
+
+> Iniciar o processo pelas funcionalidades que mais representam o seu sistema e são mais definidoras da arquitetura.
+
+## Tela - Fachada - Controlador
+Exemplos:
+
+```java
+class Tela {
+    private Fachada f;
+
+    public void tela(Fachada f) {
+        f.metodoControlador(...);
+    }
+}
+```
+
+A fachada funciona como uma espécie de _roteador_ para os controladores. Nessa camada, a fachada é capaz de **decidir para qual Controlador a chamada deve ser direcionada**, e se é necessário iniciar uma nova instância de um mesmo controlador, ou como dividir a carga entre os controladores.
+
+> A fachada tem o papel de isolar a camada de _interface gráfica_ da camada de negócios do sistema. Nela, pode-se implementar politicas de balanceamento de carga do sistema.
