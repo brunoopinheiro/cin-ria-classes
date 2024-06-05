@@ -8,6 +8,7 @@
 | :---: | --- |
 | 1 | [Projetar Arquitetura](1_projetar_arquitetura.md) |
 | 2 | [Padrões de Projeto](2_padroes_projeto.md) |
+| 3 | [Padrões Arquiteturais](3_padroes_arquiteturais.md) |
 
 ## Cronograma
 
