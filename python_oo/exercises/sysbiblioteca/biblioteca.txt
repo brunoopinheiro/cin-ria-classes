@@ -1,0 +1,20 @@
+Dom Casmurro,Machado de Assis,1899,256
+Grande Sertão: Veredas,João Guimarães Rosa,1956,624
+Memórias Póstumas de Brás Cubas,Machado de Assis,1881,192
+O Alquimista,Paulo Coelho,1988,208
+Vidas Secas,Graciliano Ramos,1938,176
+O Cortiço,Aluísio Azevedo,1890,272
+Capitães da Areia,Jorge Amado,1937,280
+O Guarani,José de Alencar,1857,384
+Iracema,José de Alencar,1865,152
+Macunaíma,Mário de Andrade,1928,224
+A Moreninha,Joaquim Manuel de Macedo,1844,176
+A Hora da Estrela,Clarice Lispector,1977,88
+O Tempo e o Vento,Érico Veríssimo,1949,728
+Quincas Borba,Machado de Assis,1891,248
+A Paixão Segundo G.H.,Clarice Lispector,1964,176
+A Pedra do Reino,Ariano Suassuna,1971,750
+O Primo Basílio,Eça de Queirós,1878,448
+O Mulato,Aluísio Azevedo,1881,304
+Senhora,José de Alencar,1875,304
+Sagarana,João Guimarães Rosa,1946,344
