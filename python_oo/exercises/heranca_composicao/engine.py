@@ -21,7 +21,7 @@ class Engine:
 
     def __init__(
         self,
-        potency,
+        potency: int,
     ) -> None:
         self.__potency = potency
         self.__acceleration = 0
