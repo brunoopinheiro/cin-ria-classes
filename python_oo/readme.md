@@ -8,3 +8,4 @@
 | 04 | [Dia 4](day4.ipynb) | Herança, Composição e Delegação |
 | 05 | [Dia 5](day5.md) | Exercícios, Dataclasses, Abstract Classes e Enums |
 | 06 | [Dia 6](day6.ipynb) | Meta Programação, Slots |
+| 07 | [Dias 6 e 7](./padroes_projeto/readme.md) | Padrões de Projeto |

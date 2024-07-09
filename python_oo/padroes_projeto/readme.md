@@ -13,3 +13,7 @@
 
 [Exemplo de Implementação](factory.py)
 
+## Observer:
+> Padrão de projeto que define uma dependência um-para-muitos entre objetos, de maneira que quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente.
+
+[Exemplo de Implementação](observer.py)
