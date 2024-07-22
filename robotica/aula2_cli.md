@@ -36,3 +36,38 @@
 - We can easily automate tasks. We can build scripts with our shell and later on execute those scripts whenever we want. This is incredibly useful when dealing with repetitive tasks that we don't want to do over and over again.
 - Sometimes the CLI will be the only way in which we'll be able to interact with a computer. Take, for example, the case when you would need to interact with a robotic plataform. In most of these cases, you won't have a GUI available, just a CLI to run commands in.
 
+### How to know what shell I'm running?
+- To know what shell you're currently running, you can use the following command:
+```bash
+echo $0
+```
+
+## Communication
+- `ssh` securely sends commands to a computer over an unsecured network
+```bash
+$ ssha user@ipmachine
+```
+
+- `scp` command allows the user to securely copy files and directories between to locations
+```bash
+$ scp [opcções] user@host1:arq1 user@host2:arq2
+$ scp usuario@origm:/dir/arquivo usuario@destino:/dir/arquivo
+$ scp -r usuario@origem:/dir usuario@destino:/dir
+```
+
+## Bash Script
+- A bash script is a file that contains a series of commands that the computer will execute.
+- To create a bash script, you can create a file with the `.sh` extension and write the commands you want to execute in it.
+```bashscript
+#! /bin/bash
+repoName=$1
+while [ -z "$repoName"]
+do
+    echo 'Provide a repository name'
+    read -r -p $'Repository name:' repoName
+done
+echo "# $repoName" >> README.md
+git init
+git add .
+git commit -m "Initial commit"
+```
