@@ -8,18 +8,18 @@
 - VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
 
 ### Python
-Id: ms-python.python
-Description: Python language support with extension access points for IntelliSense (Pylance), Debugging (Python Debugger), linting, formatting, refactoring, unit tests, and more.
-Version: 2024.10.0
-Publisher: Microsoft
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ms-python.python
+- Id: ms-python.python
+- Description: Python language support with extension access points for IntelliSense (Pylance), Debugging (Python Debugger), linting, formatting, refactoring, unit tests, and more.
+- Version: 2024.10.0
+- Publisher: Microsoft
+- VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ms-python.python
 
 ### ROS
-Id: ms-iot.vscode-ros
-Description: Develop Robot Operating System (ROS) with Visual Studio Code.
-Version: 0.9.2
-Publisher: Microsoft
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros
+- Id: ms-iot.vscode-ros
+- Description: Develop Robot Operating System (ROS) with Visual Studio Code.
+- Version: 0.9.2
+- Publisher: Microsoft
+- VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros
 
 ## Configurando a Execução
 Com as extensões instaladas, execute um container do seu projeto ROS, com o workspace montado. Seguindo os exemplos da aula, vamos chamar o nosso aqui de `turma3_ws`.
