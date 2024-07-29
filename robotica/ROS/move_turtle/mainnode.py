@@ -14,18 +14,18 @@ def main():
     while initial_pose is None:
         if subscriber._initiated is not False:
             initial_pose = subscriber.first_pose
-    target = initial_pose['x'] + 1
+    target = initial_pose['x'] + 2
     print(f'Target Acquired: {target}')
     while not rospy.is_shutdown():
         curr_pose = subscriber.pose_value
         print(curr_pose)
         curr_x = curr_pose['x']
-        if curr_x < target:
-            publisher.publish(
-                x=0.5,
-                y=0.0,
-                theta=0.0
-            )
+        pos_err = target - curr_x
+        publisher.publish(
+            x=pos_err,
+            y=0.0,
+            theta=0.0
+        )
         publisher.rate.sleep()
         if curr_x >= target:
             print('Destination Reached')
