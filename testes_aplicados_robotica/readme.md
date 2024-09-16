@@ -128,3 +128,26 @@ Um mecanismo que serve para determinar se um caso de teste passou ou falhou.
     - Postcondition
 
 > AAA (Arrange, Act, Assert)
+
+## Test Fixture
+Environment used to consistently test the software (all the things that must be in place in order to run a test and expect a particular outcome).
+- Connecting to a (populated) database.
+- Copying specific files to be used as input.
+- Cleaning up directories
+
+```python
+def setup_class():
+    ...
+
+def teardown_class():
+    ...
+
+def setup_method():
+    ...
+
+def teardown_method():
+    ...
+```
+
+## Marks
+Used to apply metadata to test functions
