@@ -21,3 +21,11 @@
 ### PCA - Principal Component Analysis
 - Cada nova dimensão é uma _combinação linear_ das variáveis originais dos dados.
 - Cada nova dimensão é chamda de _componente principal_.
+
+[Exemplo](05_pca.ipynb)
+
+## Seleção de Atributos
+### Wrappers
+- Foward-Selection
+    - Busca se inicia a partir de um sub-conjunto com um atributo
+    - Atributos são adicionados progressivamente.
