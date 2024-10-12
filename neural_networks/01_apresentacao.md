@@ -49,4 +49,3 @@ A feedforward neural network with a single layer containing a finite number of n
 
 ## Neural Network - Backpropagation
 Backpropagation is a method used in artificial neural networks to calculate a gradient that is needed in the calculation of the weights to be used in the network. It is commonly used to train deep neural networks, a term used for neural networks with more than one hidden layer.
-
